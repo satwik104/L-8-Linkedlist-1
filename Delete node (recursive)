@@ -1,0 +1,14 @@
+Node *deleteNodeRec(Node *head, int pos) {
+    Node *temp = head;
+	if(head==NULL)
+        return head;
+    if(pos==0)
+    {
+        temp = temp->next;//updating the head with its next value
+        delete head;//deleting the dynamically allocated memory of first node
+        return temp;//this will be the new head
+    }
+    Node *smallans = deleteNodeRec(temp->next,pos-1);
+    head->next = smallans;
+    return head;
+}
