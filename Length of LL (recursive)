@@ -1,0 +1,9 @@
+int length(Node *head) {
+    Node *temp=head;
+    if(head == 0)
+        return 0;
+    if(temp->next==NULL)
+        return 1;
+    int small_ans = length(temp->next);
+    return small_ans + 1;
+}
