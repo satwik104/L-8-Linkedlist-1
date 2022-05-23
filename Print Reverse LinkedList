@@ -7,3 +7,26 @@ void printReverse(Node *head)
     printReverse(temp->next);
     cout<<temp->data<<" ";
 }
+//this is another approach using arrays but we should do recursively
+/*
+void printReverse(Node *head)
+{
+    if(head==NULL)
+        return;
+    Node *temp=head;
+    Node *tail=NULL;
+    int *a=new int[1000];
+    int i=0;
+    while(temp!=NULL)
+    {
+        a[i]=temp->data;
+        temp=temp->next;
+        i++;
+    }
+    a[i]=-1;
+    while(i>0)
+    {
+        cout<<a[i-1]<<" ";
+        i--;
+    }
+}*/
