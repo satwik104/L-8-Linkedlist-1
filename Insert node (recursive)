@@ -1,0 +1,17 @@
+//dry run with example list of 1 -> 2 -> 3 -> NULL
+Node* insertNode(Node *head, int i, int data) {
+	Node *temp = head;
+    if(head == NULL)
+        return head;
+    Node *newnode = new Node(data);
+    if(i==0)//as we are handelling the head only..so if i=0 then we will give code for it
+    {
+        newnode->next = temp; //conecting our previous head with newnode
+        temp = newnode;//updating our head
+        return temp;
+    }
+    Node *smallans = insertNode(temp->next,i-1,data);
+    head->next = smallans;//at last we need to connect the head of recursion list with our head
+                          //actually its working in recursion to connect the newnode with previous node
+    return head;
+}
