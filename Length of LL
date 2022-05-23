@@ -1,0 +1,23 @@
+int length(Node *head)
+{
+    //we have head with us...so address of second node is in next of head
+    //so Tail = head -> next
+    //and last node will be the orignal tail
+    //so it would have NULL in its next
+    //hence count till (tail -> next != null)
+    
+    if(head == NULL)//if their is no list
+        return 0;
+    //if above code do not run then atleast their is one node
+    Node *tail = head -> next;
+    if(tail == NULL)//if head and tail are at same place
+        return 1;
+    //if the above if do not run then we are sure that their are atleast 2 nodes
+    int count = 2;
+        while(tail -> next != NULL)
+        {
+            count++;
+            tail = tail->next;
+        }
+    return count;        
+}
