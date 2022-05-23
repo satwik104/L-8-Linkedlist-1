@@ -1,0 +1,17 @@
+
+int findNode(Node *head, int n){
+   if(head==NULL)
+       return -1;
+    Node *temp = head;
+    int count = 0;
+    while(temp!=NULL)
+    {
+        if(temp->data == n)
+            return count;
+        temp = temp->next;
+        count++;
+    }
+    //we come here if we cross above loop means we did'nt find the number
+        return -1;
+        
+}
