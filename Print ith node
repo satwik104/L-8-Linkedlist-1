@@ -1,0 +1,12 @@
+void printIthNode(Node *head, int i)
+{
+    int count = 0;
+    Node *cp=head; //current point = cp
+    while(cp!=NULL)
+    {
+        if(count==i)
+            cout<<cp -> data;
+        count++;
+        cp = cp -> next;
+    }
+}
